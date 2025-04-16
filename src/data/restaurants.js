@@ -4,9 +4,7 @@ export const restaurants = [
     id: 1,
     name: "True Burger",
     location: "William Pitt Union",
-    cuisine: "Burgers & American",
     deliveryTime: "15-25 min",
-    rating: 4.5,
     image: "/images/true_burg.png",
     menu: [
       {
@@ -25,9 +23,7 @@ export const restaurants = [
     id: 2,
     name: "Wicked Pie",
     location: "William Pitt Union",
-    cuisine: "Pizza & Italian",
     deliveryTime: "20-30 min",
-    rating: 4.3,
     image: "/images/wicked_pie.png",
     menu: [
       {
@@ -46,9 +42,7 @@ export const restaurants = [
     id: 3,
     name: "crEATe",
     location: "William Pitt Union",
-    cuisine: "American",
     deliveryTime: "15-20 min",
-    rating: 4.2,
     image: "/images/create.png",
     menu: []
   },
@@ -56,9 +50,7 @@ export const restaurants = [
     id: 4,
     name: "Ft. Pitt Subs",
     location: "William Pitt Union",
-    cuisine: "Sandwiches",
     deliveryTime: "10-15 min",
-    rating: 4.4,
     image: "/images/fort_pitt.png",
     menu: []
   },
@@ -66,9 +58,7 @@ export const restaurants = [
     id: 5,
     name: "PA Taco Company",
     location: "William Pitt Union",
-    cuisine: "Mexican",
     deliveryTime: "15-20 min",
-    rating: 4.6,
     image: "/images/pa_taco.png",
     menu: []
   },
@@ -78,9 +68,7 @@ export const restaurants = [
     id: 6,
     name: "Burrito Bowl",
     location: "Petersen Events Center",
-    cuisine: "Mexican",
     deliveryTime: "10-15 min",
-    rating: 4.3,
     image: "/images/burrito-bowl.jpg",
     menu: []
   },
@@ -88,9 +76,7 @@ export const restaurants = [
     id: 7,
     name: "Chick-fil-A",
     location: "Petersen Events Center",
-    cuisine: "American",
     deliveryTime: "15-20 min",
-    rating: 4.7,
     image: "/images/chick-fil-a.jpg",
     menu: []
   },
@@ -98,9 +84,7 @@ export const restaurants = [
     id: 8,
     name: "Steel City Kitchen",
     location: "Petersen Events Center",
-    cuisine: "American",
     deliveryTime: "10-15 min",
-    rating: 4.1,
     image: "/images/steel-city-kitchen.jpg",
     menu: []
   },
@@ -110,9 +94,7 @@ export const restaurants = [
     id: 9,
     name: "Pom & Honey",
     location: "Cathedral of Learning",
-    cuisine: "Mediterranean",
     deliveryTime: "10-15 min",
-    rating: 4.5,
     image: "/images/pom_honey.png",
     menu: []
   },
@@ -120,9 +102,7 @@ export const restaurants = [
     id: 10,
     name: "The Roost",
     location: "Cathedral of Learning",
-    cuisine: "American",
     deliveryTime: "10-15 min",
-    rating: 4.0,
     image: "/images/roost.png",
     menu: []
   },
@@ -132,9 +112,7 @@ export const restaurants = [
     id: 11,
     name: "Bottom Line Bistro",
     location: "Mervis Hall",
-    cuisine: "Coffee & Sandwiches",
     deliveryTime: "5-10 min",
-    rating: 4.2,
     image: "/images/bottom_line.png",
     icon: "☕",
     menu: [
@@ -162,9 +140,7 @@ export const restaurants = [
     id: 12,
     name: "Bunsen Brewer",
     location: "Chevron Science Building",
-    cuisine: "Coffee & Pastries",
     deliveryTime: "5-10 min",
-    rating: 4.3,
     image: "/images/bunsen_brew.png",
     icon: "☕",
     menu: [
@@ -183,9 +159,7 @@ export const restaurants = [
     id: 13,
     name: "Cafe 1787",
     location: "Alumni Hall",
-    cuisine: "Coffee & Light Bites",
     deliveryTime: "5-10 min",
-    rating: 4.1,
     image: "/images/coffee-shop.jpg",
     icon: "☕",
     menu: []
@@ -194,9 +168,7 @@ export const restaurants = [
     id: 14,
     name: "Cafe Victoria",
     location: "Victoria Hall",
-    cuisine: "Coffee & Breakfast",
     deliveryTime: "5-10 min",
-    rating: 4.0,
     image: "/images/coffee-shop.jpg",
     icon: "☕",
     menu: []
@@ -205,9 +177,7 @@ export const restaurants = [
     id: 15,
     name: "Campus Coffee & Tea Co at Public Health",
     location: "Public Health",
-    cuisine: "Coffee & Tea",
     deliveryTime: "5-10 min",
-    rating: 4.2,
     image: "/images/public_health.png",
     icon: "☕",
     menu: []
@@ -216,9 +186,7 @@ export const restaurants = [
     id: 16,
     name: "Campus Coffee & Tea Co at Towers",
     location: "Litchfield Towers",
-    cuisine: "Coffee & Tea",
     deliveryTime: "5-10 min",
-    rating: 4.4,
     image: "/images/coffee-shop.jpg",
     icon: "☕",
     menu: []
@@ -227,9 +195,7 @@ export const restaurants = [
     id: 17,
     name: "Campus Coffee & Tea Co at Sutherland",
     location: "Sutherland Hall",
-    cuisine: "Coffee & Tea",
     deliveryTime: "5-10 min",
-    rating: 4.3,
     image: "/images/coffee-shop.jpg",
     icon: "☕",
     menu: []
@@ -238,9 +204,7 @@ export const restaurants = [
     id: 18,
     name: "RxPresso",
     location: "Salk Hall",
-    cuisine: "Coffee & Snacks",
     deliveryTime: "5-10 min",
-    rating: 4.5,
     image: "/images/coffee-shop.jpg",
     icon: "☕",
     menu: []
@@ -249,9 +213,7 @@ export const restaurants = [
     id: 19,
     name: "Sidebar Cafe",
     location: "Barco Law",
-    cuisine: "Coffee & Pastries",
     deliveryTime: "5-10 min",
-    rating: 4.2,
     image: "/images/coffee-shop.jpg",
     icon: "☕",
     menu: []

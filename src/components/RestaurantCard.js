@@ -17,45 +17,52 @@ const RestaurantCard = ({ restaurant }) => {
       { threshold: 0.01 }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
+    if (imgRef.current) observer.observe(imgRef.current);
 
     return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
+      if (imgRef.current) observer.unobserve(imgRef.current);
     };
   }, []);
 
+  const getImageSrc = () => {
+    try {
+      // Handle both full paths and just filenames
+      const filename = restaurant.image.includes('/') 
+        ? restaurant.image.split('/').pop()
+        : restaurant.image;
+      return `/images/restaurants/${filename}`;
+    } catch {
+      return '/images/default-restaurant.webp';
+    }
+  };
+
   return (
-    <div className="restaurant-card" ref={imgRef}>
-      <div className="restaurant-image-container">
-        {isVisible && (
-          <img 
-            src={restaurant.image} 
-            alt={restaurant.name}
-            className={`restaurant-image ${imageLoaded ? 'loaded' : ''}`}
-            loading="lazy"
-            onLoad={() => setImageLoaded(true)}
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = "/images/default-restaurant.webp";
-            }}
-          />
-        )}
-        <div className="image-placeholder" style={{ 
-          backgroundColor: '#00236620', // Light blue with opacity
-          display: imageLoaded ? 'none' : 'block'
-        }} />
-      </div>
-      <div className="restaurant-info">
-        <h3>{restaurant.name}</h3>
-        <div className="restaurant-meta">
-          <span>⏱ {restaurant.deliveryTime}</span>
+    <Link to={`/menu/${restaurant.id}`} className="restaurant-link">
+      <div className="restaurant-card" ref={imgRef}>
+        <div className="restaurant-image-container">
+          {isVisible && (
+            <img 
+              src={getImageSrc()}
+              alt={restaurant.name}
+              className={`restaurant-image ${imageLoaded ? 'loaded' : ''}`}
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/images/default-restaurant.webp';
+              }}
+            />
+          )}
+          <div className="image-placeholder" />
+        </div>
+        <div className="restaurant-info">
+          <h3>{restaurant.name}</h3>
+          <div className="restaurant-meta">
+            <span>⏱ {restaurant.deliveryTime}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
