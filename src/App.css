@@ -1022,3 +1022,143 @@ main {
   font-size: 1.1rem;
   text-align: center;
 }
+
+/* Wait Time Graph Styles */
+.wait-time-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.wait-time-card h3 {
+  margin-top: 0;
+  color: var(--dark-blue);
+}
+
+.highlight {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.wait-time-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.wait-time-info p {
+  margin: 0.5rem 0;
+}
+
+/* Menu Item Styles */
+.menu-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-info {
+  flex: 2;
+}
+
+.item-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.item-price {
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+.item-calories {
+  color: #666;
+}
+
+.vegetarian-badge {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.item-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  background-color: var(--light-gray);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity {
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  padding: 0.5rem 1rem;
+}
+
+/* Cart Actions */
+.cart-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: var(--dark-blue);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.checkout-btn {
+  flex: 2;
+}

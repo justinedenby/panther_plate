@@ -1,3 +1,4 @@
+// src/components/WaitTimeGraph.js
 import React from 'react';
 import {
   BarChart,
@@ -6,7 +7,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Label
 } from 'recharts';
 
 const WaitTimeGraph = ({ waitTimes }) => {
@@ -19,23 +21,51 @@ const WaitTimeGraph = ({ waitTimes }) => {
     { name: 'Sat', time: waitTimes.history[5] }
   ];
 
+  // Determine color based on current wait time
+  const getWaitTimeColor = () => {
+    if (waitTimes.current < 15) return '#4CAF50'; // Green
+    if (waitTimes.current < 25) return '#FFC107'; // Yellow
+    return '#F44336'; // Red
+  };
+
   return (
     <div className="wait-time-card">
-      <h3>Current Wait Time: <span className="highlight">{waitTimes.current} min</span></h3>
+      <h3>Current Wait Time: 
+        <span 
+          className="highlight" 
+          style={{ color: getWaitTimeColor() }}
+        >
+          {waitTimes.current} min
+        </span>
+      </h3>
       <div className="wait-time-graph">
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
-            <YAxis label={{ value: 'Minutes', angle: -90, position: 'insideLeft' }} />
-            <Tooltip />
-            <Bar dataKey="time" fill="#FFD700" />
+            <YAxis>
+              <Label 
+                value="Minutes" 
+                angle={-90} 
+                position="insideLeft" 
+                style={{ textAnchor: 'middle' }} 
+              />
+            </YAxis>
+            <Tooltip 
+              formatter={(value) => [`${value} minutes`, 'Wait Time']}
+              labelFormatter={(label) => `Day: ${label}`}
+            />
+            <Bar 
+              dataKey="time" 
+              fill="#FFD700" 
+              radius={[4, 4, 0, 0]}
+            />
           </BarChart>
         </ResponsiveContainer>
       </div>
       <div className="wait-time-info">
-        <p>Average: {waitTimes.average} min</p>
-        <p>Peak Hours: {Object.values(waitTimes.peakHours)[0].join(', ')}</p>
+        <p><strong>Average:</strong> {waitTimes.average} min</p>
+        <p><strong>Peak Hours:</strong> {Object.values(waitTimes.peakHours)[0].join(', ')}</p>
       </div>
     </div>
   );

@@ -1,48 +1,34 @@
-import React, { useState, useEffect } from 'react';
+// src/pages/Cart.js
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
+import { CartContext } from '../contexts/CartContext';
+import { restaurants } from '../data/restaurants';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  // Load cart from localStorage on component mount
-  useEffect(() => {
-    const savedCart = localStorage.getItem('pantherPlateCart');
-    if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
-    }
-  }, []);
-
-  // Save to localStorage when cart changes
-  useEffect(() => {
-    localStorage.setItem('pantherPlateCart', JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  const updateQuantity = (id, newQuantity) => {
-    const updatedCart = newQuantity < 1 
-      ? cartItems.filter(item => item.id !== id)
-      : cartItems.map(item => 
-          item.id === id ? { ...item, quantity: newQuantity } : item
-        );
-    setCartItems(updatedCart);
-  };
-
-  const removeItem = (id) => {
-    const updatedCart = cartItems.filter(item => item.id !== id);
-    setCartItems(updatedCart);
-  };
+  const { 
+    cart, 
+    restaurantId, 
+    cartCount, 
+    cartTotal, 
+    updateQuantity, 
+    removeItem, 
+    clearCart 
+  } = useContext(CartContext);
 
   // Calculate order totals
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const tax = subtotal * 0.07;
-  const deliveryFee = subtotal > 0 ? 2.99 : 0;
-  const total = subtotal + tax + deliveryFee;
+  const tax = cartTotal * 0.07;
+  const deliveryFee = cartTotal > 0 ? 2.99 : 0;
+  const total = cartTotal + tax + deliveryFee;
+
+  // Get restaurant info
+  const restaurant = restaurants.find(r => r.id === restaurantId);
 
   return (
     <div className="cart-page">
       <h2 className="cart-title">Your Panther Plate Order</h2>
       
-      {cartItems.length === 0 ? (
+      {cartCount === 0 ? (
         <div className="empty-cart">
           <p>Your cart is empty</p>
           <Link to="/" className="btn-primary">
@@ -51,8 +37,15 @@ const Cart = () => {
         </div>
       ) : (
         <>
+          {restaurant && (
+            <div className="restaurant-info">
+              <h3>{restaurant.name}</h3>
+              <p>Estimated delivery: {restaurant.deliveryTime}</p>
+            </div>
+          )}
+          
           <div className="cart-items">
-            {cartItems.map(item => (
+            {cart.map(item => (
               <CartItem 
                 key={`${item.id}-${item.restaurantId}`}
                 item={item}
@@ -64,15 +57,15 @@ const Cart = () => {
           
           <div className="order-summary">
             <div className="summary-row">
-              <span>Subtotal:</span>
-              <span>${subtotal.toFixed(2)}</span>
+              <span>Subtotal ({cartCount} items):</span>
+              <span>${cartTotal.toFixed(2)}</span>
             </div>
             <div className="summary-row">
               <span>Delivery Fee:</span>
               <span>${deliveryFee.toFixed(2)}</span>
             </div>
             <div className="summary-row">
-              <span>Tax:</span>
+              <span>Tax (7%):</span>
               <span>${tax.toFixed(2)}</span>
             </div>
             <div className="summary-row total">
@@ -81,13 +74,20 @@ const Cart = () => {
             </div>
           </div>
 
-          <p className="delivery-time">
-            <span className="icon">⏱</span> Estimated delivery: 20-30 min
-          </p>
-
-          <Link to="/checkout" className="checkout-btn btn-primary">
-            Proceed to Checkout
-          </Link>
+          <div className="cart-actions">
+            <button 
+              onClick={clearCart}
+              className="btn-secondary"
+            >
+              Clear Cart
+            </button>
+            <Link 
+              to="/checkout" 
+              className="checkout-btn btn-primary"
+            >
+              Proceed to Checkout
+            </Link>
+          </div>
         </>
       )}
     </div>
