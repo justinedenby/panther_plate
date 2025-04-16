@@ -6,7 +6,7 @@ export const OrderQueueContext = createContext();
 export const OrderQueueProvider = ({ children }) => {
   const [queue, setQueue] = useState({
     currentOrders: 0,
-    avgPrepTime: 15, // minutes
+    avgPrepTime: 7, // minutes
     estimatedWait: 0
   });
 

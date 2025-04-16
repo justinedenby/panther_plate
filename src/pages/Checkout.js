@@ -15,7 +15,7 @@ const Checkout = () => {
   const [formData, setFormData] = useState({
     name: '',
     studentId: '',
-    location: 'Dormitory A',
+    location: 'WPU',
     paymentMethod: 'Student Dining Dollars',
     instructions: ''
   });
