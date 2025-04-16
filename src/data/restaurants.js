@@ -16,7 +16,24 @@ export const restaurants = [
         category: "burgers",
         isVegetarian: false
       },
-      // ... other True Burger items
+      {
+        id: 102,
+        name: "Americana Turkey Burger",
+        description: "Juicy turkey burger with all the classic fixings",
+        price: 8.99,
+        calories: 690,
+        category: "burgers",
+        isVegetarian: false
+      },
+      {
+        id: 103,
+        name: "Sweet Potato Fries",
+        description: "Crispy sweet potato fries",
+        price: 3.99,
+        calories: 200,
+        category: "sides",
+        isVegetarian: true
+      }
     ]
   },
   {
