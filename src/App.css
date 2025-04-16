@@ -1,38 +1,506 @@
-.App {
+/* Header Styles */
+.header {
+  padding: 15px 20px;
+  color: var(--light-gold);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--light-gold);
+  text-decoration: none;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.nav-link {
+  color: var(--light-gold);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Restaurant Card Styles */
+.restaurant-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 15px;
+}
+
+.restaurant-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: var(--dark-blue);
+}
+
+/* Menu Item Styles */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.item-price {
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+/* Cart Styles */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls span {
+  margin: 0 10px;
+}
+
+.cart-total {
+  text-align: right;
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+}
+
+.checkout-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--light-gold);
+  color: var(--dark-blue);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Checkout Form Styles */
+.checkout-form {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+.form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Footer Styles */
+.footer {
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer-links a {
+  color: var(--light-gold);
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #002366; /* Dark blue text */
+  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Color Scheme Classes */
+.primary-bg {
+  background-color: #002366 !important; /* Dark blue */
+}
+
+.secondary-bg {
+  background-color: #FFD700 !important; /* Light gold */
+}
+
+.primary-text {
+  color: #002366 !important;
+}
+
+.secondary-text {
+  color: #FFD700 !important;
+}
+
+/* Header Styles */
+.header {
+  background-color: #002366;
+  color: #FFD700;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #002366;
+  color: #FFD700;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #001a4d;
+}
+
+.btn-secondary {
+  background-color: #FFD700;
+  color: #002366;
+}
+
+.btn-secondary:hover {
+  background-color: #e6c200;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 2px solid #FFD700;
+}
+
+/* Location Group Styles */
+.location-group {
+  margin-bottom: 2rem;
+}
+
+.location-header {
+  padding: 10px 15px;
+  margin: 20px 0 10px 0;
+  border-radius: 5px;
+  font-size: 1.4rem;
+}
+
+.restaurant-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Wait Time Styles */
+.wait-time-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.wait-time-graph {
+  margin: 1rem 0;
+  height: 200px;
+}
+
+.highlight {
+  color: #002366;
+  font-weight: bold;
+}
+
+.wait-time-info {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Recharts Overrides */
+.recharts-cartesian-axis-tick-value {
+  font-size: 0.8rem;
+}
+
+/* Header Styles */
+.header {
+  background-color: #002366;
+  padding: 15px 20px;
+  color: #FFD700;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-image {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #FFD700;
+}
+
+.logo-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #FFD700;
+  opacity: 0.9;
+}
+
+/* Navigation Styles */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.cart-icon {
+  font-size: 1.2rem;
+}
+
+.cart-text {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .cart-text {
+    display: inline;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .logo-image {
+    height: 80px;
   }
+}
+
+@media (max-width: 480px) {
+  .logo-text h1 {
+    font-size: 1.4rem;
+  }
+  
+  .logo-image {
+    height: 60px;
+  }
+}
+
+
+
+.location-group {
+  margin-bottom: 2rem;
+}
+
+.location-header {
+  background-color: var(--dark-blue);
+  color: var(--light-gold);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.restaurant-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+
+/* Restaurant Image Styles */
+.restaurant-image-container {
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover .restaurant-image {
+  transform: scale(1.05);
+}
+
+/* Menu Item Image Styles */
+.menu-item-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--light-gold);
+}
+
+img {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Image Container Styles */
+.restaurant-image-container {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.restaurant-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.restaurant-image.loaded {
+  opacity: 1;
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00236610 0%, #FFD70010 100%);
+}
+
+/* Prevent layout shift */
+.restaurant-card {
+  min-height: 250px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Info section styles */
+.restaurant-info {
+  padding: 12px;
+}
+
+.restaurant-info h3 {
+  margin: 0 0 8px 0;
+  color: #002366;
+}
+
+.restaurant-meta {
+  color: #666;
+  font-size: 0.9rem;
 }
