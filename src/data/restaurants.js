@@ -68,7 +68,7 @@ export const restaurants = [
     name: "Ft. Pitt Subs",
     location: "William Pitt Union",
     deliveryTime: "10-15 min",
-    image: "/images/fort_pitt.png",
+    image: "/images/ft_pitt.png",
     menu: []
   },
   {
@@ -86,7 +86,7 @@ export const restaurants = [
     name: "Burrito Bowl",
     location: "Petersen Events Center",
     deliveryTime: "10-15 min",
-    image: "/images/burrito-bowl.jpg",
+    image: "/images/burrito.png",
     menu: []
   },
   {
@@ -94,7 +94,7 @@ export const restaurants = [
     name: "Chick-fil-A",
     location: "Petersen Events Center",
     deliveryTime: "15-20 min",
-    image: "/images/chick-fil-a.jpg",
+    image: "/images/chick.jpg",
     menu: []
   },
   {
@@ -102,7 +102,7 @@ export const restaurants = [
     name: "Steel City Kitchen",
     location: "Petersen Events Center",
     deliveryTime: "10-15 min",
-    image: "/images/steel-city-kitchen.jpg",
+    image: "/images/steel.png",
     menu: []
   },
 
@@ -177,7 +177,7 @@ export const restaurants = [
     name: "Cafe 1787",
     location: "Alumni Hall",
     deliveryTime: "5-10 min",
-    image: "/images/coffee-shop.jpg",
+    image: "/images/star.png",
     icon: "☕",
     menu: []
   },
@@ -186,7 +186,7 @@ export const restaurants = [
     name: "Cafe Victoria",
     location: "Victoria Hall",
     deliveryTime: "5-10 min",
-    image: "/images/coffee-shop.jpg",
+    image: "/images/sidebar.png",
     icon: "☕",
     menu: []
   },
@@ -204,7 +204,7 @@ export const restaurants = [
     name: "Campus Coffee & Tea Co at Towers",
     location: "Litchfield Towers",
     deliveryTime: "5-10 min",
-    image: "/images/coffee-shop.jpg",
+    image: "/images/bunsen_brew.png",
     icon: "☕",
     menu: []
   },
@@ -213,7 +213,7 @@ export const restaurants = [
     name: "Campus Coffee & Tea Co at Sutherland",
     location: "Sutherland Hall",
     deliveryTime: "5-10 min",
-    image: "/images/coffee-shop.jpg",
+    image: "/images/bottom_line.png",
     icon: "☕",
     menu: []
   },
@@ -222,7 +222,7 @@ export const restaurants = [
     name: "RxPresso",
     location: "Salk Hall",
     deliveryTime: "5-10 min",
-    image: "/images/coffee-shop.jpg",
+    image: "/images/bunsen_brew.png",
     icon: "☕",
     menu: []
   },
@@ -231,7 +231,7 @@ export const restaurants = [
     name: "Sidebar Cafe",
     location: "Barco Law",
     deliveryTime: "5-10 min",
-    image: "/images/coffee-shop.jpg",
+    image: "/images/sidebar.png",
     icon: "☕",
     menu: []
   }
