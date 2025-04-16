@@ -1,22 +1,23 @@
-// src/pages/Menu.js
+// src/pages/Menu.js (updated)
 import React, { useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MenuItem from '../components/MenuItem';
 import WaitTimeGraph from '../components/WaitTimeGraph';
+import QueueStatus from '../components/QueueStatus';
 import { restaurants } from '../data/restaurants';
-import { CartContext } from '../contexts/CartContext';
+import { useCart } from '../contexts/CartContext';
+
 
 const Menu = () => {
   const { restaurantId } = useParams();
-  const { cart, restaurantId: cartRestaurantId, addToCart } = useContext(CartContext);
-  
+  const { cart, restaurantId: cartRestaurantId, addToCart } = useCart();
+      
   const restaurant = restaurants.find(r => r.id === parseInt(restaurantId));
   
-  // Mock wait time data - in a real app, this would come from an API
   const [waitTimes, setWaitTimes] = useState({
-    current: Math.floor(Math.random() * 20) + 10, // Random between 10-30
-    average: Math.floor(Math.random() * 15) + 15, // Random between 15-30
-    history: Array(6).fill().map(() => Math.floor(Math.random() * 25) + 5), // Last 6 days
+    current: Math.floor(Math.random() * 20) + 10,
+    average: Math.floor(Math.random() * 15) + 15,
+    history: Array(6).fill().map(() => Math.floor(Math.random() * 25) + 5),
     peakHours: {
       'Monday': ['11:30 AM', '12:30 PM'],
       'Tuesday': ['11:45 AM', '1:00 PM'],
@@ -35,14 +36,18 @@ const Menu = () => {
   return (
     <div className="menu-page">
       <div className="restaurant-header">
-        <h2>{restaurant.name}</h2>
-        <p>{restaurant.cuisine} • ⭐ {restaurant.rating} • ⏱ {restaurant.deliveryTime}</p>
+        <h2 className="text-3xl font-bold text-gray-800 mb-2">{restaurant.name}</h2>
+        <p className="text-gray-600 mb-4">
+          {restaurant.cuisine} • ⭐ {restaurant.rating} • ⏱ {restaurant.deliveryTime}
+        </p>
         
-        {/* Wait Time Graph Component */}
-        <WaitTimeGraph waitTimes={waitTimes} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <WaitTimeGraph waitTimes={waitTimes} />
+          <QueueStatus />
+        </div>
       </div>
       
-      <div className="menu-items">
+      <div className="menu-items space-y-4">
         {restaurant.menu && restaurant.menu.map(item => (
           <MenuItem 
             key={item.id} 
@@ -50,14 +55,22 @@ const Menu = () => {
             onAddToCart={(item, quantity) => addToCart(
               { ...item, quantity },
               parseInt(restaurantId)
-            )}
+        )}
           />
         ))}
       </div>
       
       {cartItemsFromThisRestaurant > 0 && (
-        <Link to="/cart" className="view-cart-button btn-primary">
-          View Cart ({cartItemsFromThisRestaurant})
+        <Link 
+          to="/cart" 
+          className="view-cart-button btn-primary fixed bottom-4 right-4 z-50 flex items-center justify-center w-16 h-16 rounded-full shadow-lg animate-bounce"
+        >
+          <span className="relative">
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
+              {cartItemsFromThisRestaurant}
+            </span>
+            🛒
+          </span>
         </Link>
       )}
     </div>

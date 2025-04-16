@@ -1162,3 +1162,114 @@ main {
 .checkout-btn {
   flex: 2;
 }
+
+/* Add to App.css */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification.info {
+  background-color: #002366;
+}
+
+.notification.success {
+  background-color: #4CAF50;
+}
+
+.notification.error {
+  background-color: #F44336;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Add these to your existing App.css */
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification.info {
+  background-color: #002366;
+}
+
+.notification.success {
+  background-color: #4CAF50;
+}
+
+.notification.error {
+  background-color: #F44336;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Queue Status Styles */
+.queue-status {
+  border-left: 4px solid #002366;
+}
+
+/* Menu Item Animation */
+.menu-item {
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Floating Cart Button */
+.view-cart-button {
+  transition: all 0.3s ease;
+}
+
+.view-cart-button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .restaurant-header .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Button Animations */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Quantity Selector */
+.quantity-selector {
+  transition: border-color 0.3s ease;
+}
+
+.quantity-selector:focus-within {
+  border-color: #002366;
+}
